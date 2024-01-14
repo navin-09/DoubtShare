@@ -1,0 +1,15 @@
+{
+  "development": {
+    "username": "navin",
+    "password": "kuVjrc8g2JYS75XkCiStDw",
+    "database": "Doubt",
+    "host": "waving-tapir-7654.8nk.gcp-asia-southeast1.cockroachlabs.cloud",
+    "port": 26257,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}

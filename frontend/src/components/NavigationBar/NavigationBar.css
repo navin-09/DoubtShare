@@ -1,0 +1,29 @@
+/* NavigationBar.css */
+nav {
+  background: linear-gradient(to right, #7ee195, #546b5a);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0px 2px 5px rgba(125, 178, 50, 0.1);
+}
+
+nav img {
+  height: 30px;
+  margin-right: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: linear-gradient(to right, #328db1, #e3d8d8);
+  margin-left: 1rem;
+}
+
+nav a:hover {
+  background: linear-gradient(to right, #4a37b7, #a07c7c);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}

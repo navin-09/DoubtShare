@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+
+# Build files
+build/
+dist/
+
+# Environment files
+.env
+
+# Logs
+logs/
+*.log
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Dependency directories
+/bower_components/
+/jspm_packages/
+
+# Compiled binary addons (node-gyp)
+/build/Release/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
