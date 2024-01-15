@@ -3,7 +3,6 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:3001"; // Replace with your actual API base URL
-// http://localhost:3001/auth/signup
 export const registerUser = async (formData: any) => {
   try {
     const response = await axios.post(`${BASE_URL}/auth/signup`, formData);

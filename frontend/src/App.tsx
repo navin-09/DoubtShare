@@ -13,6 +13,10 @@ function App() {
       element: <Home />,
     },
     {
+      path: "/dashboard",
+      element: <Home />,
+    },
+    {
       path: "/signup",
       element: <RegistrationPage />,
     },

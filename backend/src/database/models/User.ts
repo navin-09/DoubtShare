@@ -8,6 +8,7 @@ class User extends Model {
   public email!: string;
   public password!: string;
   public role!: string;
+  public activeToken?: string;
   public class_grade?: string;
   public language!: string;
 }
@@ -36,6 +37,10 @@ User.init(
     role: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    activeToken: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     class_grade: {
       type: DataTypes.STRING,
