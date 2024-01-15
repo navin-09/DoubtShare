@@ -7,7 +7,8 @@ export const verifyToken = async (
   res: Response,
   next: NextFunction
 ) => {
-  const token = req.headers.authorization;
+  console.log(req.headers);
+  const token: any = req.headers.authorization;
 
   if (!token) {
     return res.status(401).json({ error: "Unauthorized: No token provided" });
@@ -25,13 +26,17 @@ export const verifyToken = async (
 
     // Check if the token in the database matches the token used for the request
     if (user.activeToken !== token) {
-      return res.status(401).json({ error: "Unauthorized: Invalid token" });
+      return res
+        .status(401)
+        .json({ error: "Unauthorized: Invalid token-------" });
     }
 
     // Check for token expiration
     const currentTimestamp = Math.floor(Date.now() / 1000);
     if (decoded.exp && decoded.exp < currentTimestamp) {
-      return res.status(401).json({ error: "Unauthorized: Token expired" });
+      return res
+        .status(401)
+        .json({ error: "Unauthorized: Token expired..........." });
     }
 
     // Attach the decoded user information to the request object for further use

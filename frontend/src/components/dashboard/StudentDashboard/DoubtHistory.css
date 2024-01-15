@@ -1,0 +1,133 @@
+/* DoubtHistory.css */
+section {
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+select {
+  padding: 8px;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Add more styling as needed */
+/* DoubtHistory.css */
+section {
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+}
+
+.tabs button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Filtering options styling */
+.filter-options {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+select,
+input {
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+/* Tabs content styling */
+.tabs-content {
+  display: flex;
+}
+
+.tab-content {
+  flex: 1;
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Create options styling */
+.create-options {
+  margin-top: 20px;
+}
+
+.create-options button {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.create-options button:hover {
+  background-color: #2980b9;
+}
+
+.doubt-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.doubt-list li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Add more styling as needed */

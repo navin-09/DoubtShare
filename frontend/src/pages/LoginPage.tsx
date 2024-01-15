@@ -8,13 +8,13 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, logout, login } = useAuth();
+  const { login } = useAuth();
   const handleLogin = async (formData: any) => {
     // Add logic to send login data to the server
     try {
       const { user } = await loginUser(formData);
       const token = user.activeToken;
-      console.log(user, user.activeToken);
+      // console.log(user, user.activeToken);
       // useAuth;
       login(token);
       // localStorage.setItem("token", token);

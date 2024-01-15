@@ -1,11 +1,37 @@
 // StudentDashboard.tsx
-import React from "react";
+import React, { useState } from "react";
+import OngoingSessions from "./OngoingSessions";
+import DoubtHistory from "./DoubtHistory";
+import "./StudentDashboard.css"; // Import the CSS file
 
 const StudentDashboard = () => {
+  const [activeTab, setActiveTab] = useState("ongoing");
+
+  const handleTabChange = (tab: any) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div>
+    <div className="dashboard-container">
       <h2>Welcome, Student!</h2>
-      {/* Display ongoing sessions, doubt history, etc. */}
+
+      <div className="tab-buttons">
+        <button
+          className={activeTab === "ongoing" ? "active" : ""}
+          onClick={() => handleTabChange("ongoing")}
+        >
+          Ongoing Sessions
+        </button>
+        <button
+          className={activeTab === "history" ? "active" : ""}
+          onClick={() => handleTabChange("history")}
+        >
+          Doubt History
+        </button>
+      </div>
+
+      {activeTab === "ongoing" && <OngoingSessions />}
+      {activeTab === "history" && <DoubtHistory />}
     </div>
   );
 };

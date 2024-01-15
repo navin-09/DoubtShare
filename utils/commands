@@ -4,6 +4,8 @@
 // npx sequelize-cli db:migrate
 
 //to create a new migrations
-// npx sequelize-cli migration:generate --name create-users --migrations-path src\database\migrations
+// npx sequelize-cli migration:generate --name create-users
 
 // npx sequelize-cli seed:generate --name demo-user
+
+// postgresql://navin:kuVjrc8g2JYS75XkCiStDw@waving-tapir-7654.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/Doubt?sslmode=verify-full
