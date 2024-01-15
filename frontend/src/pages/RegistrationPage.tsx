@@ -7,9 +7,13 @@ import { registerUser } from "../api/api"; // Import the registerUser function
 
 const RegistrationPage: React.FC = () => {
   const handleRegistration = async (formData: any) => {
-    // Add logic to send registration data to the server
-    const registrationResponse = await registerUser(formData);
-    console.log("Registration form data:", formData);
+    try {
+      // Add logic to send registration data to the server
+      const registrationResponse = await registerUser(formData);
+      console.log("Registration form data:", formData);
+    } catch (error: any) {
+      throw error; // Re-throw the error to propagate it to the calling code
+    }
   };
 
   return (

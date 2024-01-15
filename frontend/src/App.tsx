@@ -6,6 +6,10 @@ import RegistrationPage from "./pages/RegistrationPage";
 import LoginPage from "./pages/LoginPage";
 import Home from "./components/Home/Home";
 
+import StudentDashboardPage from "./pages/StudentDashboardPage";
+import TutorDashboardPage from "./pages/TutorDashboardPage";
+import { AuthProvider } from "./contexts/AuthContext";
+
 function App() {
   const routes = [
     {
@@ -24,15 +28,25 @@ function App() {
       path: "/signin",
       element: <LoginPage />,
     },
+    {
+      path: "/student-dashboard",
+      element: <StudentDashboardPage />,
+    },
+    {
+      path: "/tutor-dashboard",
+      element: <TutorDashboardPage />,
+    },
   ];
   return (
-    <Router>
-      <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
-        ))}
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

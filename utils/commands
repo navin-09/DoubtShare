@@ -1,6 +1,7 @@
 // for migartions
 //go to src/database
 //command1: npx sequelize-cli init
+// npx sequelize-cli db:migrate
 
 //to create a new migrations
 // npx sequelize-cli migration:generate --name create-users --migrations-path src\database\migrations

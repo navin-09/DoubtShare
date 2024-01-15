@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./RegistrationForm.css";
 
 interface RegistrationFormProps {
-  onSubmit: (formData: RegistrationFormData) => void;
+  onSubmit: (formData: RegistrationFormData) => Promise<void>; // Now onSubmit returns a Promise
 }
 
 interface RegistrationFormData {
@@ -26,6 +26,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
     language: "",
   });
 
+  const [error, setError] = useState<string | null>(null); // State to store error messages
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -35,13 +37,31 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData);
+    setError(null); // Reset error state before making the API call
+
+    try {
+      // Call the onSubmit function passed from the parent component
+      await onSubmit(formData);
+    } catch (error: any) {
+      // Handle the error by updating the error state
+      if (error.response) {
+        setError(`API Error: ${error.response.data.error}`);
+      } else {
+        setError("Network Error: Unable to connect to the server.");
+      }
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="registration-form">
+      {error && (
+        <div className="error-message" style={{ color: "red" }}>
+          {error}
+        </div>
+      )}
+
       <label>
         Name
         <input
